@@ -2,7 +2,6 @@ declare var gapi: any;
 
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-//import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 
 
@@ -18,26 +17,6 @@ export class DocService {
 
     constructor() {
     }
-
-    //private pageTokens: Array<string | number | null> = [null];
-
-    //resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-
-    /*
-    initClient(): Promise {
-        var API_KEY = // Your API key.
-        var DISCOVERY_DOC = // Your discovery doc URL.
-        var initObj = {
-            'apiKey': API_KEY,
-            'discoveryDocs': [DISCOVERY_DOC],
-        };
-        return new Promise((resolve, reject) => {
-            this.zone.run(() => {
-                gapi.client.init(initObj).then(resolve, reject);
-            });
-        });
-    } 
-    */
 
     loadClient(): Observable<any> | Promise<any> | any {
         return new Promise<void>((resolve, reject) => {
@@ -97,18 +76,6 @@ export class DocService {
                     reject
                 );
             });
-
-                // gapi.client.load('gmail', 'v1', () => {
-                //     Promise.all([
-                //         this.loadMessages(),
-                //         this.loadLabels()
-                //     ]).then(
-                //         () => {
-                //             resolve();
-                //         },
-                //         reject
-                //     );
-                // });
         });
     }
 
@@ -175,43 +142,4 @@ export class DocService {
             window.open(this.pdf);
         });
     }
-
-    // ...
-
-    // loadMessages(labelIds: string[], pageNumber: number = 0, searchText: string = ''): Promise<any> {
-    // return new Promise((resolve, reject) => {
-    //         gapi.client.gmail.users.messages.list({
-    //             userId: 'me',
-    //             format: 'full',
-    //             maxResults: 50,
-    //             labelIds: labelIds,
-    //             pageToken: this.pageTokens[pageNumber],
-    //             q: searchText
-    //         }).then(res => {
-    //             // store page tokens in array to navigate back & forth, 
-    //             // do something with the list
-    //             resolve();
-    //         }).catch(err => {
-    //         // handle error
-    //             reject(err);
-    //         });
-    //     });
-    // }
-        
-    // loadLabels(): Promise<any> {
-    //     return new Promise((resolve, reject) => {
-    //         gapi.client.gmail.users.labels.list({
-    //             userId: 'me',
-    //             format: 'full',
-    //             maxResults: 15
-    //         }).then(async labelList => {
-    //             // loop through label list, 
-    //             // get single label (using Gmail API method 'gapi.client.gmail.users.labels.get') 
-    //             // push detailed label data to array
-    //             resolve();
-    //         }).catch(err => {
-    //             reject(err);
-    //         });
-    //     });
-    // }
 }

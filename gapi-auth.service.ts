@@ -39,37 +39,4 @@ export class AuthService {
           console.log(err);
         })
     }
-        // return new Promise((resolve, reject) => {
-        //     gapi.load('auth2', async () => {
-        //         //gapi.auth2.getAuthInstance()
-        //         this.gAuth = await gapi.auth2.init({
-        //             client_id: environment.gapiId,
-        //             fetch_basic_profile: true,
-        //             scope: environment.gapiEmail
-        //         });
-        //         resolve(this.gAuth);
-        //     }, reject);
-        // });
-
-    // fetchGoogleUser(): Promise<any> {
-    //     return new Promise(async (resolve, reject) => {
-    //         try {
-    //             const gAuth = await this.initGoogleOAuth();
-    //             const oAuthUser = await gAuth.signIn().then((response: any) => {
-    //                 console.log("sign in success")
-    //                 // Do stuff
-    //             })
-    //             .catch(function(err: any) {
-    //               console.log(err);
-    //             });
-    //             const authResponse = gAuth.currentUser.get().getAuthResponse();
-
-    //             sessionStorage.setItem('accessToken', authResponse.access_token);
-    //             console.log("access token");
-    //             console.log(authResponse.access_token);
-    //         } catch (e) {
-    //             reject(e);
-    //         }
-    //     });
-    // }
 }
