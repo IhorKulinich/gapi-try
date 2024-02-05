@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div id="head">
+
+    <div class="titled">
+        <h5 class="pre">Документ</h5>
+        <h2 class="titled_head">Тестовий документ</h2>
+    </div>
+    
+    <div class="explain">
+        <p class="explain_text">
+            Згенерувати тестовий документ для демонстрації роботи алгоритму
+        </p>
+    </div>
+
+</div>
+<form class="formg" [formGroup]="form" (ngSubmit)="submit()">
+    <app-progress [data]="form"></app-progress>
+
+    <div id="mainwrap">
+        <div id="prev" (click)="show('prev')"></div>
+        <div id="main">
+            
+            <app-container 
+            *ngFor="let cont of containers; index as i;" 
+            [data]="cont.data" 
+            [ngClass]="{'focused': cont.focused, 'blured': cont.blured, 'show': cont.show, 'unshow': cont.unshow}"
+            (next)="next(i)"
+            ></app-container>
+
+            
+            <!--
+                Оригінал квитанції про сплату судового збору від __________;
+                ! Засвідчена копія Свідоцтва про шлюб (оригінал у Відповідачки); 
+                ! Засвідчена копія РНОКПП Позивача (оригінал у Позивача);
+                ! Засвідчена копія паспорту Позивача (оригінал у Позивача);
+                Фотокопія паспорту Відповідачки (оригінал – у Відповідачки); 
+                ! Засвідчена копія Свідоцтва про народження ПІБ дитини (оригінал у Відповідачки); 
+                Копія позовної заяви з додатками – примірник для Відповідачки. 
+
+                Засвідчена копія означає, що Позивач у правому нижньому куті кожної сторінки копій із додатків пише надпис 
+                «З ОРИГІНАЛОМ ЗГІДНО» пише дату, своє ПІБ та ставить підпис, а також зазначає порядковий номер аркушу
+            -->
+        </div>
+        <div id="next" (click)="show('next')"></div>
+    </div>
+</form>
+
+<app-cookie-bottom></app-cookie-bottom>

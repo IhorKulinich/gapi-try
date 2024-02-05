@@ -1,0 +1,43 @@
+<div class="line {{data.color}}"></div>
+<div class="formg" [formGroupName]="data.group">
+    <div class="title">{{data.title}}</div>
+
+    <div *ngFor="let item of data.items; index as i;" [ngSwitch]="item.class"> 
+        <app-accordion *ngSwitchCase="'accordeon'" [data]="item.data" [formGroupName]="item.group" [ngStyle]="{'border-image-source': bording(data.form.get(data.group)?.get(item.group), i)}"></app-accordion> <!--accordion-item-->
+        <app-inputtext *ngSwitchCase="'input'" [data]="item.data"></app-inputtext> <!--item-content-->
+    </div>
+                    
+</div>
+
+<button class="next" (click)="goNext()" [disabled]="data.form.get(data.group)?.invalid">Далі</button>
+
+<!--
+    line
+    (line colors)
+    title
+    app-accordion as accordion-item
+    app-inputtext as item-content
+    button
+    next
+-->
+
+<!--
+    data.color
+    data.group
+    data.title
+    ? data.index
+    data.items []
+        class: "accordeon" | input
+        data
+        group
+
+        :accordeon:
+            title
+            inputs[] : input
+                data
+
+        :input:
+            label
+            placeholder
+            control
+-->

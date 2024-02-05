@@ -1,0 +1,26 @@
+<div class="item-header" (click)="accordeon()">
+    <h4 class="item-question">
+        {{data.title}}
+    </h4>
+    <div class="item-icon" [ngStyle]="{'transform': this.rotate}">
+        &#8681;
+    </div>
+</div>
+                
+<div class="item-content" [ngStyle]="{'max-height': this.max, 'overflow': this.overflow}">
+    <app-inputtext *ngFor="let input of data.inputs" [data]="input.data"></app-inputtext>
+</div>
+
+<!--
+    item-header
+    item-question
+    item-icon
+    item-content
+-->
+
+<!--
+    data
+        title
+        inputs[] : input
+            data
+-->

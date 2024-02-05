@@ -1,0 +1,56 @@
+.form-control{
+    margin-bottom: 10px;
+}
+
+label{
+    display: block;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-indent: 0;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    color: hsla(208, 9%, 31%, 0.8);
+
+    padding-left: 0;
+    text-indent: 0;
+}
+    
+input[type="text"]{
+    all: unset;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 5px;
+    width: 75%;
+    box-shadow: inset 0px 0px 5px #999;
+
+    border-radius: 7px;
+    color: rgba(34, 48, 74);
+    transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    display:block;
+    border: 2px solid #eeeeee;
+    background: #eeeeee;
+    
+    /* Gradients and shadows */
+    --base-gradient: linear-gradient(90deg, #eeeeee 0%, rgba(230, 230, 230, 1) 100%);
+    --outset-shadow: 5px 5px 20px 1px rgba(200, 200, 200, 1), calc(5px * -1) calc(5px * -1) 20px 1px rgba(241,245,250, 1);
+    --inset-shadow: inset 5px 5px 20px 1px rgba(200, 200, 200, 1), inset calc(5px * -1) calc(5px * -1) 20px 1px rgba(241,245,250, 1);
+}
+
+input[type="text"].ng-invalid.ng-touched{
+    border: 2px solid rgb(168, 15, 15);
+}
+
+input[type="text"].ng-valid.ng-touched{
+    border: 2px solid #97e87a;
+}
+
+input[type="text"]{
+    width: 100%;
+    margin: 0;
+    margin-top: 5px;
+}
+
+input:focus{
+    background: white;
+    box-shadow: 0 0 10px #63a2ff;
+}
